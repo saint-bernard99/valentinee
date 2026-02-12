@@ -10,9 +10,24 @@ let reasonText = "";
 
 /* step 2 */
 const steps = [
-  "Hi Kamsy, I’ve been thinking about something...",
-  "It’s been on my mind for a while now.",
-  "And I think it’s finally time to ask you.",
+  "Hey Babyyyyy💙, I’ve actually been thinking about you a lot lately...",
+  "And I just want to be honest for once.",
+  "You are really something special to me.",
+  "The way you care, the way you listen, and how you make simple moments feel meaningful...",
+  "It's rare and I don't take it lightly.",
+  "You have this calm energy that stays with me even if you are not around,",
+  "and somehow you make bad days fill lighter without even trying.",
+  "You don't even know how much I notice the little things about you.",
+  "The way you talk about what you love,",
+  "the way you show up,",
+  "and the way you make me feel.",
+  "I'm so glad God brought us together, and I won't trade it for anything in the world💙",
+  "I don't rush into saying things like this,",
+  "but i just want you to know that you mean a lot to me.",
+  "More than in words...",
+  "in a way that feels real and deep.",
+  "With all these said,",
+  "I think it’s finally time to ask you...",
 ];
 
 /* step 3 */
@@ -42,6 +57,7 @@ function nextStep() {
   if (!musicStarted) {
     audio.play();
     musicStarted = true;
+    setInterval(createHeart, 500);
   }
 
   app.style.opacity = 0;
@@ -56,7 +72,7 @@ function nextStep() {
 /* step 6 */
 function renderQuestion() {
   app.innerHTML = `
-    <p>Will you be my Valentine?</p>
+    <p>Will you be my Valentine?💐</p>
     <div>
       <button id="yesBtn">Yes</button>
       <button id="noBtn">No</button>
@@ -122,6 +138,7 @@ function submitReason() {
 
 /* step 10 */
 function handleYes() {
+  launchConfetti();
   finalAnswer = "Yes";
 
   app.style.opacity = 0;
@@ -165,4 +182,42 @@ Reason: ${reasonText || "None"}`;
 }
 
 /* step 12 */
+const heartsContainer = document.querySelector(".hearts");
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerText = "💖";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+/* step 13 */
+function launchConfetti() {
+  const duration = 3 * 1000; // 3 seconds
+  const end = Date.now() + duration;
+
+  const interval = setInterval(function () {
+    if (Date.now() > end) {
+      return clearInterval(interval);
+    }
+
+    confetti({
+      particleCount: 50,
+      spread: 120,
+      origin: { y: 0.6 }
+    });
+  }, 250);
+}
+
+
+/* step 14 */
 renderStep();

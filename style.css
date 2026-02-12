@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ffe6f0;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card{
+    background: #4da6ff;
+    width: 70%;
+    max-width: 400px;
+    padding: 50px;
+    /* height: 60%; */
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hearts{
+    position: absolute;
+}
+
+#app{
+    transition: opacity 0.4s ease
+}
+
+button {
+    padding: 12px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 999px;
+    background-color: #ffffff;
+    color: #4da6ff;
+    font-family: 'space grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6f0ff;
+    transform: scale(1.05);
+}
+
+.shrink {
+    transform: scale(0.8);
+}
+

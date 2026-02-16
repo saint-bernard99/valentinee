@@ -73,10 +73,11 @@ textarea{
     padding: 20px;
     height: 100%;
     box-sizing: border-box;
-    /* padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 12px;
-    padding-right: 12px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
 }
 
 .hearts {
@@ -106,40 +107,3 @@ textarea{
         opacity: 0;
     }
 }
-
-
-@media (min-width: 531px) {
-
-    /* button{
-        padding: 10px 30px;
-        margin-top: 20px;
-    } */
-
-    textarea{
-        border-radius: 40px;
-        margin-top: 6%;
-        margin-bottom: 7%;
-        padding: 20px;
-        height: 100%;
-        box-sizing: border-box;
-        /* padding-top: 7px;
-        padding-bottom: 7px;
-        padding-left: 12px;
-        padding-right: 12px; */
-    }
-
-    .card{
-        width: 70%;
-        max-width: 400px;
-        padding: 30px;
-        /* height: 60%; */
-        border-radius: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-    }
-}
-
